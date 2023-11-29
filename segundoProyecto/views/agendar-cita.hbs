@@ -1,0 +1,132 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Centro Medico - Registro Pacientes</title>
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="stylesheets/styleContent.css">
+    <!-- Favicon -->
+    <link href="images/favicon.png" rel="icon">
+</head>
+
+<body>
+    <header>
+        <h1>CENTRO MEDICO</h1>
+    </header>
+    <!-- Nav Bar Start -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medicos</a>
+                            <div class="dropdown-menu">
+                                <a href="registroMedicos.html" class="dropdown-item">Registrar Médicos</a>
+                                <a href="listado-medicos" class="dropdown-item">Listado Medicos Registrados</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pacientes</a>
+                            <div class="dropdown-menu">
+                                <a href="registroPacientes.html" class="dropdown-item">Registrar Pacientes</a>
+                                <a href="listado-pacientes" class="dropdown-item">Listado Pacientes Registrados</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Citas</a>
+                            <div class="dropdown-menu">
+                                <a href="consultas-citas.html" class="dropdown-item">Agendar Citas</a>
+                                <a href="listado-citas" class="dropdown-item">Listado Citas</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search">
+                        <input type="text" placeholder="¿Qué estás buscando?">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+    <main>
+        <h2>REGISTRO CITA</h2>
+        <form method="post" action="/agregar-cita">
+            <label for="cedula">Número de cédula:</label>
+            <input type="number" id="cedula" name="cedula" required>
+            <label for="fecha_cita">Fecha de ncita medica:</label>
+            <input type="date" id="fecha_cita" name="fecha_cita" required>
+            <label for="medico">Especialista:</label>
+            <select name="medico" id="medico" required>
+                <option value="">------Seleccion una opción------</option>
+                {{#each resultado}}
+                    <option value="{{cedula}}">{{nombres}} {{apellidos}}</option>
+                {{/each}}
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
+        <br>
+    </main>
+    <footer>
+        <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+                <h3>Síguenos</h3>
+                <div class="contact-info">
+                    <div class="social">
+                        <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-15 copyright">
+                    <p>Copyright &copy; Realizado por: Javier Pinzón. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
